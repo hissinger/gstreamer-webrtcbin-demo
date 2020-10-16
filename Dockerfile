@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     zlib1g \
     python3-pip \
     python3-setuptools \
-    && python3 -m pip install meson \
+    && python3 -m pip install ninja meson \
     # http://www.linuxfromscratch.org/blfs/view/svn/multimedia/gstreamer10.html
     && wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.0.tar.xz \
     && tar xvfJ gstreamer-1.14.0.tar.xz > /dev/null \
@@ -53,7 +53,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && cd libnice \
     # && ./autogen.sh --prefix=/usr --with-gstreamer --enable-static --enable-static-plugins --enable-shared --without-gstreamer-0.10 --disable-gtk-doc \
     # && make install \
-    && PATH=~/.local/bin:$PATH meson --prefix=/usr build && ninja -C build && sudo ninja -C build install \
+    && PATH=~/.local/bin:$PATH meson --prefix=/usr build && ninja -C build && ninja -C build install \
     && cd / \
     # gst-plugins-good
     && wget https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.0.tar.xz \
@@ -107,4 +107,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["/usr/bin/python3", "./webrtc-sendrecv.py"]
+ENTRYPOINT ["/usr/bin/python3", "./webrtc-sendrecv.py"]

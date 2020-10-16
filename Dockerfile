@@ -77,22 +77,16 @@ RUN wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.0.tar.xz
     && cd / \
     rm -rf gst*
 
-RUN apt-get update && apt-get install -y python3-pip \
+RUN apt-get update && apt-get install -y \
     pkg-config \ 
     libcairo2-dev \
     gcc \
-    python3-dev \
-    libgirepository1.0-dev \
-    python-gst-1.0 \
-    gir1.2-gst-plugins-bad-1.0 \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-good \
     gstreamer1.0-nice
 
-COPY requirements.txt ./
-
-RUN pip3 install --no-cache-dir -r requirements.txt
-
 COPY . .
 
-ENTRYPOINT ["/usr/bin/python3", "./webrtc-sendrecv.py"]
+RUN apt-get install -y libjson-glib-dev && ldconfig && make
+
+ENTRYPOINT ["./webrtc-sendrecv"]

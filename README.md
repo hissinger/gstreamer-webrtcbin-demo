@@ -2,8 +2,8 @@
 
 ## Gstreamer Version
 
-- gst-launch-1.0 version 1.14.0
-- GStreamer 1.14.5
+- gst-launch-1.0 version 1.18.0
+- GStreamer 1.18.0
 
 ## Build
 

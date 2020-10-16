@@ -1,0 +1,37 @@
+Sending offer:
+v=0
+o=- 2404557980159035652 0 IN IP4 0.0.0.0
+s=-
+t=0 0
+a=ice-options:trickle
+a=msid-semantic:WMS sendrecv
+m=video 9 UDP/TLS/RTP/SAVPF 97
+c=IN IP4 0.0.0.0
+a=setup:actpass
+a=ice-ufrag:n+9s/Hq3HHnZZZ7fXMCx+VwmLw/mmI2Q
+a=ice-pwd:qkR8BpiJJybZ+Pl5L7IUEm7YNsF+RHkv
+a=sendrecv
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:97 VP8/90000
+a=rtcp-fb:97 nack pli
+a=framerate:30
+a=ssrc:200016592 msid:user2870424237@host-6e91d55a webrtctransceiver0
+a=ssrc:200016592 cname:user2870424237@host-6e91d55a
+a=mid:video0
+a=fingerprint:sha-256 3A:AF:0F:22:CE:5F:54:68:9E:CA:26:E9:A9:74:52:FF:DC:1F:32:3E:10:21:0D:54:70:41:78:29:08:F8:D7:2F
+m=audio 9 UDP/TLS/RTP/SAVPF 96
+c=IN IP4 0.0.0.0
+a=setup:actpass
+a=ice-ufrag:FkqBhm5l3RxT9f4KzG1irGpBTBCZo5IL
+a=ice-pwd:SU7/9fEmOd/9Af2Ib6zUSMPHhS1bE0ez
+a=sendrecv
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:96 OPUS/48000/2
+a=rtcp-fb:96 nack pli
+a=fmtp:96 sprop-maxcapturerate=48000;sprop-stereo=0
+a=ssrc:4208420830 msid:user2870424237@host-6e91d55a webrtctransceiver1
+a=ssrc:4208420830 cname:user2870424237@host-6e91d55a
+a=mid:audio1
+a=fingerprint:sha-256 3A:AF:0F:22:CE:5F:54:68:9E:CA:26:E9:A9:74:52:FF:DC:1F:32:3E:10:21:0D:54:70:41:78:29:08:F8:D7:2F

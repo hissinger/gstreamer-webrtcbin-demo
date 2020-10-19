@@ -2,68 +2,79 @@
 
 ```
 v=0
-o=- 4116967891462929594 0 IN IP4 0.0.0.0
+o=- 7579475189409556064 0 IN IP4 0.0.0.0
 s=-
 t=0 0
 a=ice-options:trickle
-a=msid-semantic:WMS sendrecv
-m=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100
+a=group:BUNDLE video0 audio1 application2
+m=video 9 UDP/TLS/RTP/SAVPF 96 98 99 100 101
 c=IN IP4 0.0.0.0
 a=setup:actpass
-a=ice-ufrag:gq0ezUoWJAzdfa5gEcIRCe8soXL7n+Xd
-a=ice-pwd:n9VemzfNI79BhzFNctGdvBFshBr+vfgf
-a=sendonly
+a=ice-ufrag:tPc5x74tJ3IvMrAifNc8EAOFiMAOzNiz
+a=ice-pwd:7YcX71BGt+ZtHS903WnqPfV5KE1GPE9J
 a=rtcp-mux
 a=rtcp-rsize
+a=sendonly
 a=rtpmap:96 VP8/90000
 a=rtcp-fb:96 nack
 a=rtcp-fb:96 nack pli
 a=framerate:30
-a=rtpmap:97 red/90000
-a=rtpmap:98 ulpfec/90000
-a=rtpmap:99 rtx/90000
-a=fmtp:99 apt=97
+a=rtpmap:98 red/90000
+a=rtpmap:99 ulpfec/90000
 a=rtpmap:100 rtx/90000
-a=fmtp:100 apt=96
-a=ssrc-group:FID 3876339194 1407590970
-a=ssrc:3876339194 msid:user3938235733@host-747be6e8 webrtctransceiver0
-a=ssrc:3876339194 cname:user3938235733@host-747be6e8
-a=ssrc:1407590970 msid:user3938235733@host-747be6e8 webrtctransceiver0
-a=ssrc:1407590970 cname:user3938235733@host-747be6e8
+a=fmtp:100 apt=98
+a=rtpmap:101 rtx/90000
+a=fmtp:101 apt=96
+a=ssrc-group:FID 2565424383 3163612685
+a=ssrc:2565424383 msid:user1576309760@host-57ebb75e webrtctransceiver0
+a=ssrc:2565424383 cname:user1576309760@host-57ebb75e
+a=ssrc:3163612685 msid:user1576309760@host-57ebb75e webrtctransceiver0
+a=ssrc:3163612685 cname:user1576309760@host-57ebb75e
 a=mid:video0
-a=fingerprint:sha-256 D2:42:6D:B9:DC:01:C3:0F:1B:96:BD:01:ED:FC:CC:89:24:7C:BA:12:0C:65:9D:86:5B:E5:0B:3F:C0:55:DE:63
-m=audio 9 UDP/TLS/RTP/SAVPF 97
+a=fingerprint:sha-256 B7:75:B0:FE:55:83:92:61:AF:F5:64:79:65:39:CE:81:3D:62:E5:20:16:1E:8C:45:26:F2:51:89:42:2F:44:63
+m=audio 0 UDP/TLS/RTP/SAVPF 97
 c=IN IP4 0.0.0.0
 a=setup:actpass
-a=ice-ufrag:6JgBRcc9TQQsqyOlhqTXtmVSx9TN7+XS
-a=ice-pwd:b1lZZI+RPNqE4Xwbbi0kD2lur9HWriw5
-a=sendrecv
+a=ice-ufrag:tPc5x74tJ3IvMrAifNc8EAOFiMAOzNiz
+a=ice-pwd:7YcX71BGt+ZtHS903WnqPfV5KE1GPE9J
+a=bundle-only
 a=rtcp-mux
 a=rtcp-rsize
+a=sendrecv
 a=rtpmap:97 OPUS/48000/2
 a=rtcp-fb:97 nack pli
 a=fmtp:97 sprop-maxcapturerate=48000;sprop-stereo=0
-a=ssrc:3166464839 msid:user3938235733@host-747be6e8 webrtctransceiver1
-a=ssrc:3166464839 cname:user3938235733@host-747be6e8
+a=ssrc:2476615369 msid:user1576309760@host-57ebb75e webrtctransceiver1
+a=ssrc:2476615369 cname:user1576309760@host-57ebb75e
 a=mid:audio1
-a=fingerprint:sha-256 D2:42:6D:B9:DC:01:C3:0F:1B:96:BD:01:ED:FC:CC:89:24:7C:BA:12:0C:65:9D:86:5B:E5:0B:3F:C0:55:DE:63
+a=fingerprint:sha-256 B7:75:B0:FE:55:83:92:61:AF:F5:64:79:65:39:CE:81:3D:62:E5:20:16:1E:8C:45:26:F2:51:89:42:2F:44:63
+m=application 0 UDP/DTLS/SCTP webrtc-datachannel
+c=IN IP4 0.0.0.0
+a=setup:actpass
+a=ice-ufrag:tPc5x74tJ3IvMrAifNc8EAOFiMAOzNiz
+a=ice-pwd:7YcX71BGt+ZtHS903WnqPfV5KE1GPE9J
+a=bundle-only
+a=mid:application2
+a=sctp-port:5000
+a=fingerprint:sha-256 B7:75:B0:FE:55:83:92:61:AF:F5:64:79:65:39:CE:81:3D:62:E5:20:16:1E:8C:45:26:F2:51:89:42:2F:44:63
 ```
 
 # Answer(chrome)
 
 ```
 v=0
-o=- 1980912835590841838 2 IN IP4 127.0.0.1
+o=- 2601075838603992183 2 IN IP4 127.0.0.1
 s=-
 t=0 0
-a=msid-semantic: WMS K8vB6Pv5XWQJ7rLbHFRQokKPYhi5GuSHQqza
-m=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100
+a=group:BUNDLE video0 audio1 application2
+a=msid-semantic: WMS qHT96P19fMi6LFFXKWp0rkcUexnKLcswktcu
+m=video 9 UDP/TLS/RTP/SAVPF 96 98 99 100 101
 c=IN IP4 0.0.0.0
 a=rtcp:9 IN IP4 0.0.0.0
-a=ice-ufrag:jX04
-a=ice-pwd:wowOUsVLXB8eMvVdWpqjKWQj
+a=ice-ufrag:iyRF
+a=ice-pwd:WneHkA6cr4wREtZptQSIpIiO
 a=ice-options:trickle
-a=fingerprint:sha-256 2E:54:82:FA:E8:77:15:72:47:B2:1F:7C:17:4B:7A:8F:90:5B:34:E2:DD:F8:D6:C3:BF:4D:CA:DB:C7:B8:51:14
+a=fingerprint:sha-256 E1:89:D6:AC:FC:DE:55:44:1A:C6:D1:30:99:DC:39:5E:FE:79:75:8E:53:9C:F3:9D:A7:84:FA:88:42:AD:6A:C4
 a=setup:active
 a=mid:video0
 a=recvonly
@@ -72,36 +83,46 @@ a=rtcp-rsize
 a=rtpmap:96 VP8/90000
 a=rtcp-fb:96 nack
 a=rtcp-fb:96 nack pli
-a=rtpmap:97 red/90000
-a=rtpmap:98 ulpfec/90000
-a=rtpmap:99 rtx/90000
-a=fmtp:99 apt=97
+a=rtpmap:98 red/90000
+a=rtpmap:99 ulpfec/90000
 a=rtpmap:100 rtx/90000
-a=fmtp:100 apt=96
-a=ssrc-group:FID 1285974169 2734198609
-a=ssrc:1285974169 cname:iQWXX3stbP4NqwJi
-a=ssrc:1285974169 msid:K8vB6Pv5XWQJ7rLbHFRQokKPYhi5GuSHQqza 23ee71ee-4066-4c21-a1dd-a8affa861109
-a=ssrc:1285974169 mslabel:K8vB6Pv5XWQJ7rLbHFRQokKPYhi5GuSHQqza
-a=ssrc:1285974169 label:23ee71ee-4066-4c21-a1dd-a8affa861109
-a=ssrc:2734198609 cname:iQWXX3stbP4NqwJi
-a=ssrc:2734198609 msid:K8vB6Pv5XWQJ7rLbHFRQokKPYhi5GuSHQqza 23ee71ee-4066-4c21-a1dd-a8affa861109
-a=ssrc:2734198609 mslabel:K8vB6Pv5XWQJ7rLbHFRQokKPYhi5GuSHQqza
-a=ssrc:2734198609 label:23ee71ee-4066-4c21-a1dd-a8affa861109
+a=fmtp:100 apt=98
+a=rtpmap:101 rtx/90000
+a=fmtp:101 apt=96
+a=ssrc-group:FID 4130575184 2687712082
+a=ssrc:4130575184 cname:khzyytFsNukGT5RT
+a=ssrc:4130575184 msid:qHT96P19fMi6LFFXKWp0rkcUexnKLcswktcu 62d1b00f-7271-405a-8f74-a8a23d99f41a
+a=ssrc:4130575184 mslabel:qHT96P19fMi6LFFXKWp0rkcUexnKLcswktcu
+a=ssrc:4130575184 label:62d1b00f-7271-405a-8f74-a8a23d99f41a
+a=ssrc:2687712082 cname:khzyytFsNukGT5RT
+a=ssrc:2687712082 msid:qHT96P19fMi6LFFXKWp0rkcUexnKLcswktcu 62d1b00f-7271-405a-8f74-a8a23d99f41a
+a=ssrc:2687712082 mslabel:qHT96P19fMi6LFFXKWp0rkcUexnKLcswktcu
+a=ssrc:2687712082 label:62d1b00f-7271-405a-8f74-a8a23d99f41a
 m=audio 9 UDP/TLS/RTP/SAVPF 97
 c=IN IP4 0.0.0.0
 a=rtcp:9 IN IP4 0.0.0.0
-a=ice-ufrag:7eGe
-a=ice-pwd:95S10xM4zBWoKhLe7LL9XhEs
+a=ice-ufrag:iyRF
+a=ice-pwd:WneHkA6cr4wREtZptQSIpIiO
 a=ice-options:trickle
-a=fingerprint:sha-256 2E:54:82:FA:E8:77:15:72:47:B2:1F:7C:17:4B:7A:8F:90:5B:34:E2:DD:F8:D6:C3:BF:4D:CA:DB:C7:B8:51:14
+a=fingerprint:sha-256 E1:89:D6:AC:FC:DE:55:44:1A:C6:D1:30:99:DC:39:5E:FE:79:75:8E:53:9C:F3:9D:A7:84:FA:88:42:AD:6A:C4
 a=setup:active
 a=mid:audio1
 a=sendrecv
 a=rtcp-mux
 a=rtpmap:97 OPUS/48000/2
 a=fmtp:97 minptime=10;useinbandfec=1
-a=ssrc:286988297 cname:iQWXX3stbP4NqwJi
-a=ssrc:286988297 msid:K8vB6Pv5XWQJ7rLbHFRQokKPYhi5GuSHQqza ec3b4d8e-08c1-4b35-be0b-a588f12ed998
-a=ssrc:286988297 mslabel:K8vB6Pv5XWQJ7rLbHFRQokKPYhi5GuSHQqza
-a=ssrc:286988297 label:ec3b4d8e-08c1-4b35-be0b-a588f12ed998
+a=ssrc:3836297971 cname:khzyytFsNukGT5RT
+a=ssrc:3836297971 msid:qHT96P19fMi6LFFXKWp0rkcUexnKLcswktcu ea2f5d1a-17ef-4e29-997d-5f76977324fd
+a=ssrc:3836297971 mslabel:qHT96P19fMi6LFFXKWp0rkcUexnKLcswktcu
+a=ssrc:3836297971 label:ea2f5d1a-17ef-4e29-997d-5f76977324fd
+m=application 9 UDP/DTLS/SCTP webrtc-datachannel
+c=IN IP4 0.0.0.0
+b=AS:30
+a=ice-ufrag:iyRF
+a=ice-pwd:WneHkA6cr4wREtZptQSIpIiO
+a=ice-options:trickle
+a=fingerprint:sha-256 E1:89:D6:AC:FC:DE:55:44:1A:C6:D1:30:99:DC:39:5E:FE:79:75:8E:53:9C:F3:9D:A7:84:FA:88:42:AD:6A:C4
+a=setup:active
+a=mid:application2
+a=sctp-port:5000
 ```

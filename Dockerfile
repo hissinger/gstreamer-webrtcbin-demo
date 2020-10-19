@@ -16,7 +16,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     gtk-doc-tools `# libnice` \
     libffi-dev \
     libglib2.0 \
-    libnice-dev \
     libopus-dev \
     libpcre3-dev \
     libsrtp2-dev \
@@ -29,12 +28,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     python \
     wget \
     zlib1g \
+    libjson-glib-dev \
+    libsoup2.4-dev \
+    pkg-config \
     python3-pip \
     python3-setuptools \
     && python3 -m pip install ninja meson
 
-
-# http://www.linuxfromscratch.org/blfs/view/svn/multimedia/gstreamer10.html
 RUN wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.0.tar.xz \
     && tar xvfJ gstreamer-1.18.0.tar.xz > /dev/null \
     && cd gstreamer-1.18.0 \
@@ -77,16 +77,8 @@ RUN wget https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.0.tar.xz
     && cd / \
     rm -rf gst*
 
-RUN apt-get update && apt-get install -y \
-    pkg-config \ 
-    libcairo2-dev \
-    gcc \
-    gstreamer1.0-plugins-bad \
-    gstreamer1.0-plugins-good \
-    gstreamer1.0-nice
-
 COPY . .
 
-RUN apt-get install -y libjson-glib-dev && ldconfig && make
+RUN ldconfig && make
 
 ENTRYPOINT ["./webrtc-sendrecv"]
